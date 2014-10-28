@@ -54,8 +54,7 @@ dom> addTwo(2)
 
 ```js
 $ w625 http://littlstar.com
-dom> Array.prototype.forEach.call(document.getElementsByTagName('a'),
-node => console.log(node.href))
+dom> Array.prototype.forEach.call(document.getElementsByTagName('a'), node => console.log(node.href))
 https://littlstar.com/
 https://littlstar.com/#home
 https://littlstar.com/#about
