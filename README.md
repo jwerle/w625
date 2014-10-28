@@ -3,6 +3,12 @@ w625
 
 ES6 repl with web page scope
 
+## install
+
+```sh
+$ [sudo] npm i w625 -g
+```
+
 ## usage
 
 ```sh
