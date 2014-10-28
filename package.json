@@ -1,6 +1,6 @@
 {
   "name": "w625",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ES6 repl with web page scope",
   "homepage": "https://github.com/jwerle/w625",
   "keywords": [ "es6", "jsdom", "repl", "web" ],
