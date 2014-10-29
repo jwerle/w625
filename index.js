@@ -67,46 +67,37 @@ tasks.push(function (next) {
     var hasReferenceError = false;
     var result = null;
     var code = null;
+    var es5err = null;
+    var es6err = null;
 
     // extract source
     if (src.match(/\n\)$/)) {
       src = src.slice(1, -2);
     }
 
-    // transform
-    try {
+    try { result = context.eval(src); }
+    catch (err) {
+      es5err = err;
+    }
+
+    if (null != es5err) try {
       code = es6.run({
         src: src,
         filename: 'repl',
         disallowUnknownReferences: false,
         globals: (
           Object.keys(context)
-          .map(function (k) {
-            return k;
-          })
-          .reduce(function (o, k) {
-            o[k] = true;
-            return o;
-          }, {})
+          .map(function (k) { return k; })
+          .reduce(function (o, k) { return (o[k] = true), o; }, {})
         )
       });
+
+      result = context.eval(code.src);
     } catch (err) {
-      return done(err);
-    }
-
-    // evaluate
-    try { result = context.eval(code.src); }
-    catch (err) { }
-
-    if (code.errors.join(' ').toLowerCase().indexOf('reference') > 0) {
-      hasReferenceError = true;
-    }
-
-    // if no result attempt to evaluate source
-    if (null == result && code.errors.length && true === hasReferenceError) {
-      try { result = context.eval(src); }
-      catch (err) {
-        console.error(err, code.errors)
+      if (es5err) {
+        return done(es5err);
+      } else {
+        return done(err);
       }
     }
 
