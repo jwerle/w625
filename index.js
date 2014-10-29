@@ -69,7 +69,9 @@ tasks.push(function (next) {
     var code = null;
 
     // extract source
-    src = src.slice(1, -2);
+    if (src.match(/\n\)$/)) {
+      src = src.slice(1, -2);
+    }
 
     // transform
     try {
