@@ -30,7 +30,7 @@ tasks.push(function (next) {
     help();
     exit(0);
   } else if (argv.V || argv.version) {
-    console.log("jsdom-repl v%s", require('./package').version);
+    console.log("w625-repl v%s", require('./package').version);
     exit(0);
   }
 
@@ -96,7 +96,6 @@ tasks.push(function (next) {
     try { result = context.eval(code.src); }
     catch (err) { }
 
-
     if (code.errors.join(' ').toLowerCase().indexOf('reference') > 0) {
       hasReferenceError = true;
     }
@@ -105,7 +104,7 @@ tasks.push(function (next) {
     if (null == result && code.errors.length && true === hasReferenceError) {
       try { result = context.eval(src); }
       catch (err) {
-        console.log(err, code.errors)
+        console.error(err, code.errors)
       }
     }
 

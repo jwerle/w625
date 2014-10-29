@@ -3,17 +3,24 @@
   "version": "0.0.2",
   "description": "ES6 repl with web page scope",
   "homepage": "https://github.com/jwerle/w625",
-  "keywords": [ "es6", "jsdom", "repl", "web" ],
+  "keywords": [
+    "es6",
+    "jsdom",
+    "repl",
+    "web"
+  ],
   "author": "Joseph Werle <joseph.werle@gmail.com>",
   "license": "MIT",
   "main": "index.js",
   "preferGlobal": true,
-  "bin": { "w625": "./index.js" },
+  "bin": {
+    "w625": "./index.js"
+  },
   "dependencies": {
-    "minimist": "~1.1.0",
-    "jsdom": "~1.0.3",
     "batch": "~0.5.1",
-    "6to5": "~1.10.6"
+    "es6-transpiler": "^0.7.17",
+    "jsdom": "~1.0.3",
+    "minimist": "~1.1.0"
   },
   "repository": {
     "type": "git",
