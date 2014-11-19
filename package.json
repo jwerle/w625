@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "batch": "~0.5.1",
-    "es6-transpiler": "^0.7.17",
     "jsdom": "~1.0.3",
-    "minimist": "~1.1.0"
+    "minimist": "~1.1.0",
+    "es6-transpiler": "~0.7.17"
   },
   "repository": {
     "type": "git",
