@@ -1,7 +1,7 @@
 w625
 ====
 
-ES6 repl with web page scope
+**[Deprecated]** ES6 repl with web page scope
 
 ## install
 
@@ -17,10 +17,12 @@ $ usage: w625 [-hV] [src] [--script=script]
 
 ## why ?
 
-I wanted to use es6 ***NOW*** in a repl and couldn't find any solutions
+**6to5 NOW supports what this module intended to fix. DO NOT USE**
+
+~~I wanted to use es6 ***NOW*** in a repl and couldn't find any solutions
 out there. [6to5](https://github.com/sebmck/6to5) is great ! However, you
 currently cannot maintain state in their repl implementation. See below
-for an example:
+for an example:~~
 
 ```js
 $ 6to5-node
